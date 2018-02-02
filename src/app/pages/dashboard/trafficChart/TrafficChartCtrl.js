@@ -23,7 +23,7 @@
           ],
           datasets: [
               {
-                  data: [2000, 1500, 1000, 1200, 400],
+                  data: [2000, 1500, 1000, 1200, 100],
                   backgroundColor: [
                       dashboardColors.white,
                       dashboardColors.blueStone,

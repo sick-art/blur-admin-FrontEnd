@@ -12,7 +12,7 @@
   function WeatherCtrl($scope, $http, $timeout, $element) {
     var url = 'http://api.openweathermap.org/data/2.5/forecast';
     var method = 'GET';
-    var key = '2de143494c0b295cca9337e1e96b00e0';
+    var key = '41fe7fbe34c7d261ac6752e965e10381';
     var middleOfTheDay = 15;
     $scope.units = 'metric';
     $scope.weatherIcons = {
