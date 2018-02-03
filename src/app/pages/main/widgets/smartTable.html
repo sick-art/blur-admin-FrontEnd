@@ -4,12 +4,14 @@
       <thead>
       <tr>
         <th class="table-id">Rank</th>
+        <th class="browser-icons"></th>
         <th>Name</th>
         <th class="align-right">Market Cap</th>
         <th class="align-right">Price</th>
         <th class="align-right">Change(24h)</th>
       </tr>
       <tr>
+        <th></th>
         <th></th>
         <th><input st-search="name" placeholder="Search Coin" class="input-sm form-control search-input"
                    type="search"/></th>
@@ -21,7 +23,8 @@
       <tbody>
       <tr ng-repeat="item in coinMarketData">
         <td class="table-id">{{item.rank}}</td>
-        <td><i class="cc BTC"></i>{{item.name}}</td>
+        <td><i class="cc {{item.symbol}}"></td>
+        <td></i>{{item.name}}</td>
         <td class="align-right">{{item.market_cap_usd | currency}}</td>
         <td class="align-right">{{item.price_usd | currency}}</td>
         <td class="align-right" ng-style="dataColor({{item.percent_change_24h}})">{{item.percent_change_24h}}</td>
