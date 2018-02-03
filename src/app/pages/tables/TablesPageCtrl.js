@@ -550,7 +550,7 @@
       {
         image: 'app/browsers/chrome.svg',
         browser: 'Google Chrome',
-        visits: '10,392',
+        visits: '10,394',
         isVisitsUp: true,
         purchases: '4,214',
         isPurchasesUp: true,

@@ -1,0 +1,37 @@
+<div class="horizontal-scroll">
+  <table class="table table-hover">
+    <thead>
+    <tr class="black-muted-bg">
+      <!-- <th class="browser-icons"></th> -->
+      <th>Rank</th>
+      <th>Name</th>
+      <th class="align-right">Market Cap</th>
+      <!-- <th class="table-arr"></th> -->
+      <th class="align-right">Price</th>
+      <!-- <th class="table-arr"></th> -->
+      <!-- <th class="align-right">Volume</th>
+      <th class="table-arr"></th> -->
+      <th class="align-right">Change(24h)</th>
+      <th class="table-arr"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in coinMarketData | limitTo : 10" class="no-top-border">
+      <!-- <td><img ng-src="{{::( item.image | appImage )}}" width="20" height="20"></td> -->
+      <td ng-class="nowrap">{{item.rank}}</td>
+      <td ng-class="nowrap">{{item.name}}</td>
+
+      <td class="align-right">{{item.market_cap_usd | currency}}</td>
+      <!-- <td class="table-arr"><i ng-class="{'icon-up': item.isVisitsUp, 'icon-down': !item.isVisitsUp }"></i></td> -->
+
+      <td class="align-right">${{item.price_usd}}</td>
+      <!-- <td class="table-arr"><i ng-class="{'icon-up': item.isPurchasesUp, 'icon-down': !item.isPurchasesUp }"></i></td> -->
+
+      <!-- <td class="align-right">{{item.24h_volume_usd}}</td>
+      <td class="table-arr"><i ng-class="{'icon-up': item.isPercentUp, 'icon-down': !item.isPercentUp }"></i></td> -->
+      <td class="align-right" ng-style="dataColor({{item.percent_change_24h}})">{{item.percent_change_24h}}</td>
+      <td class="table-arr"><i ng-class="{'icon-up': item.percent_change_24h > 0, 'icon-down': item.percent_change_24h < 0 }"></i></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

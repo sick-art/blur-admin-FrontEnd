@@ -1,0 +1,46 @@
+<div class="horizontal-scroll">
+    
+    <table class="table" st-table="coinMarketData">
+      <thead>
+      <tr>
+        <th class="table-id">Rank</th>
+        <th>Name</th>
+        <th class="align-right">Market Cap</th>
+        <th class="align-right">Price</th>
+        <th class="align-right">Change(24h)</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th><input st-search="name" placeholder="Search Coin" class="input-sm form-control search-input"
+                   type="search"/></th>
+        <th></th>
+        <th></th>
+        <th></th>           
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="item in coinMarketData">
+        <td class="table-id">{{item.rank}}</td>
+        <td><i class="cc BTC"></i>{{item.name}}</td>
+        <td class="align-right">{{item.market_cap_usd | currency}}</td>
+        <td class="align-right">{{item.price_usd | currency}}</td>
+        <td class="align-right" ng-style="dataColor({{item.percent_change_24h}})">{{item.percent_change_24h}}</td>
+        <td class="table-arr"><i ng-class="{'icon-up': item.percent_change_24h > 0, 'icon-down': item.percent_change_24h < 0 }"></i></td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="6" class="text-center">
+          <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+    <div class="form-group select-page-size-wrap ">
+        <label>Rows on page
+          <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+                  ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+          </select>
+        </label>
+      </div>
+  </div>
