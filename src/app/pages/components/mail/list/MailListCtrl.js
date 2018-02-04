@@ -9,9 +9,9 @@
     .controller('MailListCtrl', MailListCtrl);
 
   /** @ngInject */
-  function MailListCtrl($stateParams,  mailMessages) {
+  function MailListCtrl($stateParams,  mailMessagesService) {
     var vm = this;
-    vm.messages = mailMessages.getMessagesByLabel($stateParams.label);
+    vm.messages = mailMessagesService.getMessagesByLabel($stateParams.label);
     vm.label = $stateParams.label;
   }
 

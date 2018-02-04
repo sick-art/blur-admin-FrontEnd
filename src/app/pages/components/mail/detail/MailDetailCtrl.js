@@ -9,9 +9,9 @@
     .controller('MailDetailCtrl', MailDetailCtrl);
 
   /** @ngInject */
-  function MailDetailCtrl($stateParams, mailMessages) {
+  function MailDetailCtrl($stateParams, mailMessagesService) {
     var vm = this;
-    vm.mail = mailMessages.getMessageById($stateParams.id);
+    vm.mail = mailMessagesService.getMessageById($stateParams.id);
     vm.label = $stateParams.label;
   }
 

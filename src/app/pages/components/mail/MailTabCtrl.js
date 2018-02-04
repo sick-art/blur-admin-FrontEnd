@@ -9,7 +9,7 @@
       .controller('MailTabCtrl', MailTabCtrl);
 
   /** @ngInject */
-  function MailTabCtrl(composeModal, mailMessages) {
+  function MailTabCtrl(composeModal, mailMessagesService) {
 
     var vm = this;
     vm.navigationCollapsed = true;
@@ -21,7 +21,7 @@
       })
     };
 
-    vm.tabs = mailMessages.getTabs();
+    vm.tabs = mailMessagesService.getTabs();
   }
 
 })();

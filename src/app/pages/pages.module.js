@@ -17,6 +17,7 @@
     'BlurAdmin.pages.maps',
     'BlurAdmin.pages.profile',
     'BlurAdmin.pages.main',
+    'BlurAdmin.pages.roadmap',
   ])
       .config(routeConfig);
 

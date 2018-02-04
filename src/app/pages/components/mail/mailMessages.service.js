@@ -6,10 +6,10 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.components.mail')
-    .service('mailMessages', mailMessages);
+    .service('mailMessagesService', mailMessagesService);
 
   /** @ngInject */
-  function mailMessages($sce) {
+  function mailMessagesService($sce) {
     var messages = [
       {
         "id": "4563faass",

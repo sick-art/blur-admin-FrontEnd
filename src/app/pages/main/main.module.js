@@ -10,26 +10,36 @@
         .filter('floor', floor);
   
     /** @ngInject */
-    function routeConfig($stateProvider) {
+    function routeConfig($stateProvider, $urlRouterProvider) {
+      $urlRouterProvider.when('/main','/main/list');
+
       $stateProvider
           .state('main', {
             url: '/main',
+            //abstract: true,
             templateUrl: 'app/pages/main/main.html',
             title: 'Main',
-            controller: 'MainPageCtrl',
-            resolve: {
-              // top10CoinMarketData: function(MarketCapService) {
-              //   return MarketCapService.getTop10Crypto();
-              // },
-              coinMarketData: function(MarketCapService) {
-                return MarketCapService.getCrypto();
-              }
-            },
             sidebarMeta: {
               icon: 'ion-android-home',
               order: 0,
             },
+          }).state('main.list', {
+            url: '/list',
+            templateUrl: 'app/pages/main/list/coinList.html',
+            title: 'Main',
+            controller: 'coinListCtrl',
+            resolve: {
+              coinMarketData: function(MarketCapService) {
+                return MarketCapService.getCrypto();
+              }
+            }
+          }).state('main.detail', {
+            url: '/detail/:symbol',
+            templateUrl: 'app/pages/main/detail/coinDetail.html',
+            title: 'Main',
+            controller: "coinDetailCtrl",
           });
+          
     }
   
     function floor() {
