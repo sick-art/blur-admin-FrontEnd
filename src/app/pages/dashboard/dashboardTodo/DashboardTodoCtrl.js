@@ -32,7 +32,7 @@
       { text: 'Ei cum solet appareat, ex est graeci mediocritatem' },
       { text: 'Get in touch with akveo team' },
       { text: 'Write email to business cat' },
-      { text: 'Have fun with blur admin' },
+      { text: 'Have fun with Nectar' },
       { text: 'What do you think?' },
     ];
 
