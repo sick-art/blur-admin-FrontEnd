@@ -36,7 +36,7 @@
           }).state('main.detail', {
             url: '/detail/:symbol',
             templateUrl: 'app/pages/main/detail/coinDetail.html',
-            title: 'Main',
+            title: 'Graph',
             controller: "coinDetailCtrl",
           });
           
@@ -47,5 +47,7 @@
           return Math.floor(input);
       };
     }
+
+
   })();
   

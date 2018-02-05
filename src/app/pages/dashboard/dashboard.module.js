@@ -17,7 +17,7 @@
           title: 'Dashboard',
           sidebarMeta: {
             icon: 'fa fa-anchor',
-            order: 0,
+            order: 1,
           },
         });
   }

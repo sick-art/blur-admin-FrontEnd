@@ -21,7 +21,7 @@
             },
             sidebarMeta: {
               icon: 'ion-flag',
-              order: 0,
+              order: 3,
             },
           });
     }
